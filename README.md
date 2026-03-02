@@ -1,32 +1,51 @@
 # Machine Learning Projects
 
-This repository contains end-to-end machine learning and data analysis projects built with Python, Jupyter Notebook, and common data science libraries.
+Applied machine learning, statistical analysis, and business-focused data science projects built with Python and Jupyter Notebook.
 
-## Project List
+This repository focuses on practical problem solving across predictive modeling, experiment analysis, pricing, and structured tabular data workflows.
 
-1. **Student Performance Dataset**
-   - Exam score prediction and factor analysis with a focus on leakage detection, multicollinearity, and interpretability
+## Featured Projects
 
-2. **Red Wine Quality**
-   - Binary classification of wine quality using baseline and ensemble models with model evaluation and error analysis
+### 1. Chicago Crime Arrest Prediction
+- Time-aware binary classification using temporal train/test split
+- Class imbalance handling, logistic regression baseline, and XGBoost comparison
+- Focus on deployment-aware validation and ethical risk awareness
 
-3. **Chocolate Sales**
-   - Sales analysis and predictive modeling using transactional features and business-oriented insights
+### 2. Australian Rental Market
+- Fair market rent prediction using location, property, and amenity features
+- Underpriced listing detection with value scoring
+- Regression modeling with feature engineering and business-oriented recommendations
 
-4. **Chicago Crime**
-   - Time-aware arrest prediction using temporal validation, class imbalance handling, and model comparison
+### 3. Fast Food Marketing Campaign Test
+- A/B/C-style campaign analysis using ANOVA and Tukey HSD
+- Effect size estimation and regression adjustment for store characteristics
+- Business recommendation for campaign rollout based on statistical evidence
 
-5. **Australian Rental Market**
-   - Fair market rent prediction and underpriced listing detection using location, structure, and amenity features
+## Additional Projects
 
-6. **Loan**
-   - Loan-related machine learning analysis using tabular features for prediction and classification tasks
+### Student Performance Dataset
+- Exam score prediction with leakage detection, multicollinearity checks, and interpretability-focused modeling
 
-7. **Titanic**
-   - Survival prediction using feature engineering, classification models, and competition-style workflow
+### Red Wine Quality
+- Binary classification using baseline and ensemble models with model evaluation and error analysis
 
-8. **Fast Food Marketing Campaign Test**
-   - A/B/C-style campaign effectiveness analysis using ANOVA, post-hoc testing, effect size, and regression adjustment
+### Chocolate Sales
+- Sales analysis and predictive modeling with business-oriented insight generation
+
+### Loan
+- Interest rate prediction on messy financial data using regression models and robust preprocessing
+
+### Titanic
+- Survival prediction using feature engineering, missing value analysis, and classification model comparison
+
+## Skills Demonstrated
+
+- Supervised learning: regression and classification
+- Statistical inference: ANOVA, post-hoc testing, effect size analysis
+- Time-aware validation and leakage prevention
+- Feature engineering on structured tabular datasets
+- Model comparison, interpretation, and business recommendation writing
+- End-to-end notebook workflow including preprocessing, evaluation, and reporting
 
 ## Tech Stack
 
@@ -35,10 +54,12 @@ This repository contains end-to-end machine learning and data analysis projects 
 - numpy
 - scikit-learn
 - XGBoost
+- scipy
+- statsmodels
 - matplotlib
 - seaborn
 - Jupyter Notebook
 
-## Notes
+## Repository Structure
 
-Each project folder contains its own notebook, and some folders also include a dedicated README with project-specific context, methodology, and results.
+Each project folder contains the notebook and supporting files used for the analysis. Most folders also include a dedicated README summarizing the business problem, methodology, results, and key takeaways.
