@@ -3,3 +3,9 @@
 
 .ipynb_checkpoints/
 **/.ipynb_checkpoints/
+
+# Large raw datasets
+9. Yelp_Review_Helpfulness_Prediction/yelp_academic_dataset_*.json
+9. Yelp_Review_Helpfulness_Prediction/Dataset_User_Agreement.pdf
+10. Bike_Demand_Forecasting/bike+sharing+dataset/
+10. Bike_Demand_Forecasting/bike+sharing+dataset.zip

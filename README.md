@@ -42,11 +42,13 @@ The projects are designed to show not only predictive performance, but also how 
 - NLP-adjacent review analysis using text-derived, user, and business features
 - Classification and ranking workflow for surfacing useful reviews
 - Product-style evaluation with ranking metrics and review interpretation
+  Folder: `9. Yelp_Review_Helpfulness_Prediction`
 
 ### 6. Bike Demand Forecasting
 - Time series regression using temporal, seasonal, and weather-based features
 - Lag and rolling feature engineering with time-aware validation
 - Forecasting-oriented evaluation with interpretable tree-based models
+  Folder: `10. Bike_Demand_Forecasting`
 
 ## Additional Projects
 
@@ -103,6 +105,11 @@ The projects are designed to show not only predictive performance, but also how 
 ## Repository Structure
 
 Each project folder contains the notebook and supporting files used for the analysis. Most folders also include a dedicated README summarizing the business problem, methodology, results, and key takeaways.
+
+Recent additions:
+
+- `9. Yelp_Review_Helpfulness_Prediction`
+- `10. Bike_Demand_Forecasting`
 
 ## Notes
 
