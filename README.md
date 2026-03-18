@@ -21,6 +21,7 @@ The projects are designed to show not only predictive performance, but also how 
 If you are visiting this portfolio for the first time, the best projects to start with are:
 
 - [EY Water Quality Challenge](https://github.com/SieonLee/ey-water-quality-challenge)
+- [Cue](https://github.com/SieonLee/Cue)
 - [Yelp Review Helpfulness Prediction](./9.%20Yelp_Review_Helpfulness_Prediction/README.md)
 - [Bike Demand Forecasting](./10.%20Bike_Demand_Forecasting/README.md)
 - [Australian Rental Market](./5.%20Australian_Rental_Market/README.md)
@@ -29,32 +30,37 @@ If you are visiting this portfolio for the first time, the best projects to star
 
 These are the projects that best represent the current strengths of the portfolio across prediction, experimentation, forecasting, ranking, and geospatial modeling.
 
-### 1. [Chicago Crime Arrest Prediction](./4.Chicago_Crime/README.md)
+### 1. [Cue](https://github.com/SieonLee/Cue)
+- On-device mobile coaching app with contextual recommendations and feedback-driven personalization
+- Thompson Sampling, LinUCB comparison, SQLite persistence, and product analytics
+- Strong example of applied ML and experimentation concepts inside a user-facing product
+
+### 2. [Chicago Crime Arrest Prediction](./4.Chicago_Crime/README.md)
 - Time-aware binary classification using temporal train/test split
 - Class imbalance handling, logistic regression baseline, and XGBoost comparison
 - Focus on deployment-aware validation and ethical risk awareness
 
-### 2. [Australian Rental Market](./5.%20Australian_Rental_Market/README.md)
+### 3. [Australian Rental Market](./5.%20Australian_Rental_Market/README.md)
 - Fair market rent prediction using location, property, and amenity features
 - Underpriced listing detection with value scoring
 - Regression modeling with feature engineering and business-oriented recommendations
 
-### 3. [Fast Food Marketing Campaign Test](./8.%20Fast_Food_Marketing_Campaign_Test/README.md)
+### 4. [Fast Food Marketing Campaign Test](./8.%20Fast_Food_Marketing_Campaign_Test/README.md)
 - A/B/C-style campaign analysis using ANOVA and Tukey HSD
 - Effect size estimation and regression adjustment for store characteristics
 - Business recommendation for campaign rollout based on statistical evidence
 
-### 4. [EY Water Quality Challenge](https://github.com/SieonLee/ey-water-quality-challenge)
+### 5. [EY Water Quality Challenge](https://github.com/SieonLee/ey-water-quality-challenge)
 - Environmental prediction project using Landsat, TerraClimate, and geospatial feature engineering
 - Ensemble regression with target-specific blending
 - EDA, feature engineering, and remote-sensing style tabular modeling
 
-### 5. [Yelp Review Helpfulness Prediction](./9.%20Yelp_Review_Helpfulness_Prediction/README.md)
+### 6. [Yelp Review Helpfulness Prediction](./9.%20Yelp_Review_Helpfulness_Prediction/README.md)
 - NLP-adjacent review analysis using text-derived, user, and business features
 - Classification and ranking workflow for surfacing useful reviews
 - Product-style evaluation with ranking metrics and review interpretation
 
-### 6. [Bike Demand Forecasting](./10.%20Bike_Demand_Forecasting/README.md)
+### 7. [Bike Demand Forecasting](./10.%20Bike_Demand_Forecasting/README.md)
 - Time series regression using temporal, seasonal, and weather-based features
 - Lag and rolling feature engineering with time-aware validation
 - Forecasting-oriented evaluation with interpretable tree-based models
@@ -84,6 +90,7 @@ These are the projects that best represent the current strengths of the portfoli
 - Forecasting-style feature engineering
 - NLP-adjacent review analysis and ranking
 - Geospatial and environmental modeling workflows
+- Applied recommendation systems and experimentation in a product setting
 - Business framing, model comparison, and practical recommendations
 
 ## Skills Demonstrated
