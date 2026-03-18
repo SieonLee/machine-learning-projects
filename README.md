@@ -25,7 +25,9 @@ If you are visiting this portfolio for the first time, the best projects to star
 - [Bike Demand Forecasting](./10.%20Bike_Demand_Forecasting/README.md)
 - [Australian Rental Market](./5.%20Australian_Rental_Market/README.md)
 
-## Featured Projects
+## Selected Projects
+
+These are the projects that best represent the current strengths of the portfolio across prediction, experimentation, forecasting, ranking, and geospatial modeling.
 
 ### 1. [Chicago Crime Arrest Prediction](./4.Chicago_Crime/README.md)
 - Time-aware binary classification using temporal train/test split
