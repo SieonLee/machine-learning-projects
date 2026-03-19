@@ -4,6 +4,25 @@ Applied machine learning, statistical analysis, and business-focused data scienc
 
 This repository highlights practical data science work across predictive modeling, experiment analysis, pricing, tabular machine learning, and business-oriented problem solving.
 
+## Why This Portfolio Matters
+
+This repository is designed to function as a hiring-friendly portfolio rather than a notebook dump. The goal is to show how I move from an ambiguous business or product question to a clear analysis, a defensible modeling choice, and a useful recommendation.
+
+It is especially relevant for:
+
+- data science internships
+- applied machine learning roles
+- product or experimentation-focused data roles
+- analytics positions that value communication alongside modeling
+
+## Recruiter Snapshot
+
+- **Best standalone project:** [Cue](https://github.com/SieonLee/Cue)
+- **Best challenge-style project:** [EY Water Quality Challenge](https://github.com/SieonLee/ey-water-quality-challenge)
+- **Best experimentation project:** [Fast Food Marketing Campaign Test](./8.%20Fast_Food_Marketing_Campaign_Test/README.md)
+- **Best forecasting project:** [Bike Demand Forecasting](./10.%20Bike_Demand_Forecasting/README.md)
+- **Best ranking / review project:** [Yelp Review Helpfulness Prediction](./9.%20Yelp_Review_Helpfulness_Prediction/README.md)
+
 ## Overview
 
 This portfolio focuses on:
@@ -22,9 +41,9 @@ If you are visiting this portfolio for the first time, the best projects to star
 
 - [EY Water Quality Challenge](https://github.com/SieonLee/ey-water-quality-challenge)
 - [Cue](https://github.com/SieonLee/Cue)
+- [Fast Food Marketing Campaign Test](./8.%20Fast_Food_Marketing_Campaign_Test/README.md)
 - [Yelp Review Helpfulness Prediction](./9.%20Yelp_Review_Helpfulness_Prediction/README.md)
 - [Bike Demand Forecasting](./10.%20Bike_Demand_Forecasting/README.md)
-- [Australian Rental Market](./5.%20Australian_Rental_Market/README.md)
 
 ## Selected Projects
 
