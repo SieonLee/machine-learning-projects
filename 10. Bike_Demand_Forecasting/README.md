@@ -2,16 +2,9 @@
 
 ## Overview
 
-This project predicts bike rental demand using time-based and weather-related features.
+This project forecasts bike rental demand using time and weather information, with most of the value coming from treating the problem as a temporal system rather than a generic regression task.
 
-The goal is to build a practical forecasting workflow that combines exploratory data analysis, temporal feature engineering, and regression modeling in a format consistent with the rest of my machine learning project portfolio.
-
-This project focuses on:
-
-- time-based exploratory data analysis
-- temporal and seasonal feature engineering
-- regression modeling for demand prediction
-- time-aware evaluation for realistic forecasting performance
+That changes the workflow in important ways. Demand depends on recent history, recurring hourly behavior, and seasonal context, so the notebook focuses as much on time-aware feature design and evaluation as it does on the final model choice.
 
 ---
 
@@ -115,32 +108,13 @@ The final model comparison showed that tree-based ensemble models outperformed t
   - RMSE: 52.79
   - R²: 0.9423
 
-### Key Findings
+## Conclusion
 
-- Tree-based ensemble models performed substantially better than the linear baseline.
-- Gradient Boosting achieved the best overall performance, with the highest R² and lowest RMSE.
-- Random Forest also performed strongly and produced the lowest MAE among the tree-based models by a small margin.
-- Lag and rolling features contributed meaningful predictive signal by capturing short-term temporal dependence.
-- Time-aware validation provided a realistic estimate of forecasting performance and helped avoid leakage.
+The forecasting results suggest that bike demand is shaped by strong nonlinear patterns that a simple linear model cannot fully capture. Once lagged demand, rolling averages, weather, and calendar signals were added, the tree-based models pulled noticeably ahead of the baseline. Gradient Boosting delivered the strongest overall fit, while Random Forest remained competitive and slightly stronger on MAE.
 
----
+The important lesson here is not just that one model scored better than another. It is that forecasting quality improved when the feature set respected how demand actually behaves over time. Short-term momentum, recurring hourly patterns, and seasonal context all mattered, and the time-aware validation setup gave a more realistic estimate of what would happen in deployment.
 
-## Expected Outputs
-
-- Demand trend visualizations
-- Hourly and seasonal usage patterns
-- Correlation analysis
-- Model comparison using MAE, RMSE, and R²
-- Feature importance analysis for the final tree-based model
-
----
-
-## Key Learning Goals
-
-- Apply time-aware validation correctly
-- Build forecasting-style features with lag and rolling windows
-- Compare baseline and ensemble regression models
-- Interpret seasonal demand behavior in a business-friendly way
+So the final conclusion is pretty practical: if the goal is to forecast near-term bike demand well enough to support staffing, inventory, or bike rebalancing decisions, then a tree-based forecasting workflow with lag and rolling features is much more appropriate than a simple linear baseline.
 
 ---
 
@@ -153,16 +127,3 @@ The final model comparison showed that tree-based ensemble models outperformed t
 - matplotlib
 - seaborn
 - Jupyter Notebook
-
----
-
-## Summary
-
-This project extends my previous tabular machine learning work into a time series setting while keeping the workflow practical and interpretable.
-
-It demonstrates:
-
-- exploratory data analysis for temporal data
-- feature engineering for forecasting
-- regression model comparison
-- time-aware validation and interpretation

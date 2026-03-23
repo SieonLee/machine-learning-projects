@@ -1,12 +1,12 @@
 # Machine Learning Projects
 
-Applied machine learning, statistical analysis, and business-focused data science projects built with Python and Jupyter Notebook.
+A portfolio of machine learning and data science projects built with Python and Jupyter Notebook.
 
-This repository highlights practical data science work across predictive modeling, experiment analysis, pricing, tabular machine learning, and business-oriented problem solving.
+Most of the work here starts from a practical question: what is happening in the data, what would be useful to predict or estimate, and how can the result be explained clearly enough to be trusted.
 
 ## Why This Portfolio Matters
 
-This repository is designed to function as a hiring-friendly portfolio rather than a notebook dump. The goal is to show how I move from an ambiguous business or product question to a clear analysis, a defensible modeling choice, and a useful recommendation.
+I use this repository less as a storage space for notebooks and more as a record of how I approach applied problems. The goal is to show how I move from a vague question to a workable dataset, a sensible modeling choice, and a conclusion that can actually be communicated to someone else.
 
 It is especially relevant for:
 
@@ -33,7 +33,7 @@ This portfolio focuses on:
 - practical feature engineering
 - model comparison, interpretation, and recommendation writing
 
-The projects are designed to show not only predictive performance, but also how data science can be used to answer business questions, support decision-making, and communicate results clearly.
+Across the portfolio, I try to balance predictive performance with judgment. In most cases the more interesting part is not just whether a model performs well, but whether the workflow is realistic, the interpretation is honest, and the result is useful in context.
 
 ## Start Here
 
@@ -101,6 +101,10 @@ These are the projects that best represent the current strengths of the portfoli
 ### [Titanic](./7.%20Titanic/README.md)
 - Survival prediction using feature engineering, missing value analysis, and classification model comparison
 
+### [Heart Disease From Scratch](./11.%20Heart_Disease_From_Scratch/README.md)
+- Custom logistic regression implementation on a Kaggle healthcare dataset
+- Strong example of foundational ML understanding plus notebook-based communication
+
 ## What This Portfolio Demonstrates
 
 - Regression and classification on real-world tabular data
@@ -110,6 +114,7 @@ These are the projects that best represent the current strengths of the portfoli
 - NLP-adjacent review analysis and ranking
 - Geospatial and environmental modeling workflows
 - Applied recommendation systems and experimentation in a product setting
+- Foundational machine learning implementation from scratch
 - Business framing, model comparison, and practical recommendations
 
 ## Skills Demonstrated
@@ -123,6 +128,7 @@ These are the projects that best represent the current strengths of the portfoli
 - Geospatial feature engineering for environmental prediction
 - Model comparison, interpretation, and business recommendation writing
 - End-to-end notebook workflow including preprocessing, evaluation, and reporting
+- Core algorithm implementation and validation against library baselines
 
 ## Tech Stack
 
@@ -153,6 +159,7 @@ Current folders:
 - `8. Fast_Food_Marketing_Campaign_Test`
 - `9. Yelp_Review_Helpfulness_Prediction`
 - `10. Bike_Demand_Forecasting`
+- `11. Heart_Disease_From_Scratch`
 
 ## Notes
 

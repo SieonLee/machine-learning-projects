@@ -1,16 +1,10 @@
 # Titanic Survival Prediction
 
-## Project Overview
+## Overview
 
-This project predicts whether a Titanic passenger survived using structured passenger information such as class, sex, age, fare, embarkation port, and family-related features.
+This project revisits the Titanic dataset as a classification problem, but the interesting part is less the benchmark itself and more the way feature engineering changes what the model can learn.
 
-The objective is not only to build a classification model, but also to demonstrate practical machine learning workflow elements such as:
-
-- Missing value analysis
-- Feature engineering
-- Class imbalance awareness
-- Model comparison
-- Model saving and reloading for holdout prediction
+The notebook uses survival prediction as a chance to work through missing values, family structure, title extraction, and cabin information in a way that keeps the final model interpretable rather than overcomplicated.
 
 ## Problem Definition
 
@@ -99,7 +93,7 @@ The following models were compared:
 
 Logistic Regression was selected as the final model because it achieved the best overall tradeoff between accuracy, precision, recall, and F1-score while remaining interpretable and efficient.
 
-## Insights from EDA
+## EDA Interpretation
 
 - Female passengers had much higher survival rates than male passengers
 - First-class passengers had substantially higher survival rates than third-class passengers
@@ -120,6 +114,12 @@ This project includes a practical prediction workflow:
 
 This makes the notebook closer to a reusable machine learning pipeline rather than a one-time analysis.
 
+## Conclusion
+
+The final model reinforces one of the most consistent patterns in the Titanic dataset: survival was strongly shaped by social position and access, not just randomness. Sex and passenger class remain the most important signals, while fare, age, and cabin-related features add useful context around privilege and travel conditions.
+
+From a modeling perspective, logistic regression turned out to be the most balanced final choice. That is a good reminder that a simpler model can still be the right answer when the feature engineering is thoughtful and the problem structure is relatively interpretable.
+
 ## Tech Stack
 
 - Python
@@ -129,13 +129,3 @@ This makes the notebook closer to a reusable machine learning pipeline rather th
 - matplotlib
 - seaborn
 - joblib
-
-## Summary
-
-This project demonstrates:
-
-- End-to-end binary classification workflow
-- Practical feature engineering on tabular data
-- Handling of informative missing values
-- Comparison of multiple classification models
-- Model persistence and holdout prediction workflow

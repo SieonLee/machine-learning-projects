@@ -1,18 +1,10 @@
 # Australian Rental Market Fair Price Prediction & Underpriced Listing Detection
 
-## Project Overview
+## Overview
 
-This project aims to estimate the fair market rental price of residential properties across Australia using structured listing data.
+This project estimates fair market rent for Australian properties and then takes the more useful next step of asking which listings look underpriced relative to that estimate.
 
-Beyond simple price prediction, the project identifies potentially underpriced listings by comparing the actual listed rent with the model-estimated fair price.
-
-The objective is not only predictive performance, but also to demonstrate practical data science considerations such as:
-
-- Real estate price modeling with structured tabular data
-- Feature engineering using amenities and local market signals
-- Model comparison (linear vs tree-based vs boosting)
-- Business-oriented scoring for deal detection
-- Practical marketplace applications for pricing intelligence
+That second step is what turns the notebook from a standard regression exercise into something closer to a marketplace problem. Price prediction matters, but what renters and platforms often care about is whether a listing looks like a good deal compared with similar properties nearby.
 
 ## Problem Definition
 
@@ -112,7 +104,11 @@ This score was used to classify listings into:
 | Random Forest | 196.0 | 11.99 | 0.6720 |
 | XGBoost | 193.6 | 11.91 | 0.6800 |
 
-## Key Observations
+## Conclusion
+
+This project suggests that rental pricing can be modeled fairly well using a combination of structural property features, amenity signals, and local market context. The strong influence of `suburb_median_price` makes intuitive sense because location anchors rental value, while bedrooms, bathrooms, and amenity features explain variation within each area.
+
+What makes the project especially useful is the step beyond prediction. Estimating fair price is valuable on its own, but converting that estimate into a value score makes the output much more actionable for renters and marketplaces. Instead of stopping at RMSE or R², the notebook turns the regression result into a ranking-style workflow for identifying potentially underpriced listings.
 
 - Ridge Regression achieved the best R², showing strong overall explanatory power.
 - XGBoost achieved the lowest MAPE, making it the most useful model for practical pricing and deal detection.
@@ -161,13 +157,3 @@ This suggests that nearly one in five listings in the dataset may be priced belo
 - XGBoost
 - matplotlib
 - seaborn
-
-## Summary
-
-This project demonstrates:
-
-- Fair market rent prediction using structured property data
-- Practical feature engineering with local market and amenity signals
-- Comparison of baseline and advanced machine learning models
-- Underpriced listing detection through value scoring
-- Business-oriented thinking for rental marketplace applications

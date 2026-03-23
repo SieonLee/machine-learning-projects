@@ -1,16 +1,10 @@
 # Loan Interest Rate Prediction
 
-## Project Overview
+## Overview
 
-This project predicts the interest rate assigned to a loan using borrower, credit, and loan application features from a structured lending dataset.
+This project predicts loan interest rates from borrower, credit, and application features, but the harder part is not the model itself. It is getting the data into a form that deserves to be modeled in the first place.
 
-The objective is not only to build an accurate regression model, but also to demonstrate practical machine learning workflow elements such as:
-
-- Dirty data cleaning
-- Missing value handling
-- Outlier treatment
-- Model comparison across linear and non-linear methods
-- Model saving and holdout prediction workflow
+Because the dataset contains messy formatting, missing values, and inconsistent fields, the notebook ends up looking much more like a realistic lending workflow than a clean benchmark problem. That is exactly why I wanted it in the portfolio.
 
 ## Problem Definition
 
@@ -101,13 +95,11 @@ Validation performance was compared using:
 
 Random Forest was selected as the final model because it delivered the strongest validation performance and handled complex feature interactions more effectively than the linear baselines.
 
-## Key Insights
+## Conclusion
 
-- Loan grade is the dominant pricing signal
-- Interest rate distribution is close to normal with slight right skew
-- Numerical features alone show only weak to moderate linear correlations with the target
-- Some financial variables exhibit strong multicollinearity
-- Non-linear models perform better than linear models for this problem
+The main takeaway from this project is that loan pricing behaves like a messy real-world regression problem rather than a clean classroom dataset. A large part of the work lies in cleaning inconsistent fields, handling missing values, and building a pipeline that can score new data reliably. Once that foundation is in place, the modeling results show that nonlinear methods are better suited than linear baselines for capturing how borrower and loan characteristics combine to determine interest rates.
+
+Loan grade stands out as the strongest pricing signal, which aligns with how lending decisions are typically structured. That makes the final model behavior easy to justify: the algorithm is not uncovering something mysterious, but learning a hierarchy that already exists in credit pricing.
 
 ## Deployment Workflow
 
@@ -130,13 +122,3 @@ This makes the notebook closer to a reusable applied ML workflow than a one-off 
 - matplotlib
 - seaborn
 - joblib
-
-## Summary
-
-This project demonstrates:
-
-- Practical cleaning of messy tabular data
-- Regression modeling for financial pricing
-- Comparison of linear and tree-based models
-- Robust preprocessing for holdout scoring
-- End-to-end prediction pipeline design

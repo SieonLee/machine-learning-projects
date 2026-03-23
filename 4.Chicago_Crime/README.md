@@ -1,18 +1,10 @@
 # Chicago Crime Arrest Prediction (Time-Aware Modeling)
 
-## Project Overview
+## Overview
 
-This project aims to predict whether an arrest will be made given historical crime records from the Chicago Crime dataset.
+This project asks whether arrest outcomes can be predicted from historical Chicago crime records in a way that still feels realistic once time is taken seriously.
 
-Instead of using a naive random split, this analysis applies a time-aware training strategy to simulate real-world deployment and prevent temporal data leakage.
-
-The objective is not only predictive performance, but also to demonstrate practical data science considerations such as:
-
-- Temporal drift
-- Class imbalance handling
-- Model comparison (linear vs non-linear)
-- Deployment-aware validation strategy
-- Ethical awareness in predictive modeling
+That framing matters here. A random split would make the notebook look cleaner, but it would hide the more important question of whether a model trained on older records still says anything useful about newer ones. It is also a setting where model performance has to be discussed alongside ethical risk, not after it.
 
 ---
 
@@ -99,7 +91,7 @@ For XGBoost, `scale_pos_weight` was used to address imbalance.
 | Logistic Regression | ~0.84 | See notebook | See notebook |
 | XGBoost | See notebook | See notebook | See notebook |
 
-### Key Observations
+### Model Performance
 
 - Logistic Regression achieved strong baseline performance (ROC-AUC ≈ 0.84), indicating strong structural relationships between crime type and arrest outcomes.
 - XGBoost captured additional non-linear interactions and improved predictive performance.
@@ -127,6 +119,12 @@ For XGBoost, `scale_pos_weight` was used to address imbalance.
 
 ---
 
+## Conclusion
+
+This project shows that arrest outcomes are predictable to a meaningful degree when crime type, time, and location context are included, and that time-aware validation is essential for making that result credible. XGBoost improves on the already strong linear baseline, which suggests there are useful nonlinear interactions in the data.
+
+At the same time, the conclusion cannot stop at model performance. Arrest is not a neutral label, and any predictive signal is entangled with policing practices, reporting behavior, and structural bias. That makes this notebook useful not only as a classification project, but also as an example of how applied machine learning should include deployment realism and ethical caution.
+
 ## Tech Stack
 
 - Python
@@ -136,15 +134,3 @@ For XGBoost, `scale_pos_weight` was used to address imbalance.
 - XGBoost
 - matplotlib
 - seaborn
-
----
-
-## Summary
-
-This project demonstrates:
-
-- Time-aware modeling to prevent data leakage
-- Practical handling of class imbalance
-- Baseline versus advanced model comparison
-- Realistic deployment considerations
-- Awareness of ethical risks in predictive modeling

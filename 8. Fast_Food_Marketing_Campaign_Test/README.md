@@ -2,15 +2,13 @@
 
 ## Overview
 
-This project evaluates the effectiveness of three marketing campaigns (Promotion 1, 2, and 3) using weekly store-level sales data.
+This project compares three fast food marketing campaigns using weekly store-level sales data.
 
-The objective is to determine whether statistically significant differences exist among the campaigns and to provide a data-driven recommendation for large-scale rollout.
-
-Statistical hypothesis testing, effect size analysis, and regression modeling were applied to quantify both statistical and practical impact.
+What makes it useful is that it stays close to the kind of question a business team would actually ask: which promotion should we keep investing in, and is the difference large enough to matter beyond statistical significance alone?
 
 ---
 
-## Business Problem
+## Problem Definition
 
 A fast food company launched three promotional strategies across multiple markets.
 
@@ -85,7 +83,7 @@ Built an OLS regression model controlling for:
 - Market Size
 - Store Age
 
-Key Findings:
+Regression summary:
 
 - Promotion 2 generates ~$10.75k lower weekly sales than Promotion 1 (p < 0.001)
 - Promotion 3 is not significantly different from Promotion 1
@@ -94,12 +92,13 @@ Key Findings:
 
 ---
 
-## Key Insights
+## Conclusion
 
-- Promotion 2 consistently underperforms.
-- Promotion 1 and 3 show comparable performance.
-- Market size has greater impact on sales than promotion type.
-- Statistical significance aligns with regression-adjusted results.
+The results point to a fairly clear business decision. Promotion 2 underperforms in both the ANOVA and the regression-adjusted analysis, so it is difficult to justify rolling it out further. Promotion 1 and Promotion 3 perform similarly, which means the practical choice between them would likely depend on execution cost, operational simplicity, or other business constraints not included in the dataset.
+
+One of the more useful findings is that market size explains a substantial share of weekly sales variation. That matters because it suggests the company should not evaluate campaign performance in isolation. A promotion may look strong or weak partly because of where it was deployed, so segmentation should be part of any next-round testing strategy.
+
+Taken together, the analysis supports a simple conclusion: stop investing in Promotion 2, treat Promotion 1 and 3 as the real contenders, and evaluate future campaign rollouts with market context in mind.
 
 ---
 

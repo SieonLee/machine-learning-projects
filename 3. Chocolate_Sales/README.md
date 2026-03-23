@@ -2,20 +2,13 @@
 
 ## Overview
 
-This project analyzes a chocolate sales dataset to uncover business insights and build a regression model to predict revenue (`Amount`).
+This project looks at chocolate sales data to understand what is actually driving revenue and how much of that story a regression model can capture.
 
-The analysis follows a structured data science workflow:
-
-1. Exploratory Data Analysis (EDA)
-2. Feature Engineering
-3. Regression Modeling
-4. Model Evaluation and Interpretation
-
-The objective is not only to build a predictive model, but also to understand revenue structure and identify key sales drivers.
+What I like about this dataset is that it pushes past the easy assumption that selling more boxes should always mean making more money. Once pricing differences across products enter the picture, revenue becomes a much more interesting variable to analyze.
 
 ---
 
-## Dataset Description
+## Dataset
 
 The dataset contains 3,282 sales transactions with the following columns:
 
@@ -28,7 +21,9 @@ The dataset contains 3,282 sales transactions with the following columns:
 
 ---
 
-## Data Cleaning
+## Methodology
+
+### 1. Data Cleaning
 
 - Converted `Amount` from string (e.g., "$1,200") to float
 - Converted `Date` to datetime format
@@ -44,7 +39,7 @@ The dataset contains 3,282 sales transactions with the following columns:
 
 ---
 
-## Exploratory Data Analysis
+### 2. Exploratory Data Analysis
 
 Key findings from EDA:
 
@@ -59,7 +54,7 @@ Key findings from EDA:
 
 ---
 
-## Modeling Approach
+### 3. Modeling Approach
 
 ### Problem Definition
 
@@ -82,7 +77,7 @@ Categorical variables were encoded using One-Hot Encoding.
 
 ---
 
-## Models Evaluated
+### 4. Models Evaluated
 
 1. Baseline Model (Mean prediction)
 2. Ridge Regression
@@ -99,7 +94,7 @@ Cross-validation was applied to ensure robustness.
 
 ---
 
-## Results Summary
+## Results
 
 - Tree-based models outperform linear regression.
 - Random Forest achieves the best predictive performance.
@@ -108,12 +103,11 @@ Cross-validation was applied to ensure robustness.
 
 ---
 
-## Key Insights
+## Conclusion
 
-- Revenue is not linearly driven by volume.
-- A small subset of products generates the majority of total sales (Pareto effect).
-- Product pricing structure plays a dominant role in revenue prediction.
-- Sales performance varies significantly by product and region.
+The strongest theme in this analysis is that chocolate revenue is shaped by product mix and pricing structure much more than by shipment volume alone. That is why the overall relationship between `Amount` and `Boxes Shipped` stays weaker than a simple sales intuition might suggest. Selling more units matters, but what is being sold matters just as much.
+
+The modeling results support that story. Tree-based methods outperform linear regression because the problem contains product-specific and regional interactions that are hard to represent with a single linear relationship. In practice, this makes the project more valuable as a business analysis of pricing and sales structure than as a narrow prediction exercise.
 
 ---
 

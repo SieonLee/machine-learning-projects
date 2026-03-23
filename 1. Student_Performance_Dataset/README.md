@@ -1,135 +1,112 @@
 # Student Exam Score Prediction & Factor Analysis
 
-## Project Overview
+## Overview
 
-This project analyzes the key factors influencing students' exam scores and builds predictive models to quantify their impact.
+This project looks at student performance data with a simple question in mind: what actually seems to move exam scores, and which relationships still look believable once the easy sources of leakage are removed?
 
-The focus is not only on model performance but also on:
-
-- Data leakage detection
-- Multicollinearity handling
-- Model interpretability
-- Reproducibility
+What makes the notebook interesting is that the first version of the model looks unrealistically good. That turns the project into more than a regression exercise. It becomes a small example of the kind of skepticism data science often requires before any result is worth interpreting.
 
 ---
 
-## Problem Statement
+## Problem Definition
 
-**Goal:**  
-Identify the most important variables affecting `exam_score` and build a reliable predictive model.
+**Task:** Regression  
+**Target Variable:** `exam_score`
 
-Key Questions:
+### Main Questions
 
-- Which variables significantly impact exam performance?
-- Is there multicollinearity?
-- Is there data leakage?
-- Which variables are actionable from a policy perspective?
-
----
-
-## Data Preprocessing
-
-### 1. Numeric Feature Selection
-
-Only numerical variables were used for correlation and regression analysis.
-
-### 2. Data Leakage Detection
-
-Initial modeling produced:
-
-- Linear Regression R² = 1.0  
-- Random Forest R² ≈ 0.9999  
-
-This indicated severe data leakage.
-
-Highly correlated variables:
-
-- `productivity_score`
-- `focus_index`
-
-These variables were likely intermediate or derived features directly related to `exam_score`.  
-They were removed before final modeling.
-
-### 3. Multicollinearity Check (VIF)
-
-Variance Inflation Factor (VIF) was computed.
-
-- `productivity_score` showed VIF > 10 and was removed.
-- `student_id` was removed as a non-informative identifier.
+- Which variables are most strongly associated with exam performance?
+- Are any features leaking target information into the model?
+- Is multicollinearity affecting interpretability?
+- Which findings are potentially actionable from a policy or student-support perspective?
 
 ---
 
-## Modeling Approach
+## Dataset
 
-### Train/Test Split
+This project uses a student performance dataset with academic, behavioral, and well-being related features.
 
-- 80 / 20 split
-- Fixed random state for reproducibility
+### Example Variables
 
-### 1. Linear Regression
+- `study_hours`
+- `mental_health_score`
+- `burnout_level`
+- `sleep_hours`
+- `social_media_hours`
+- `attendance_percentage`
+- `exam_score`
 
-- Standardized features using `StandardScaler`
-- Evaluated using R² and RMSE
-- Used primarily for interpretability
-
-### 2. Random Forest Regressor
-
-- Captured non-linear relationships
-- Used for feature importance comparison
+The analysis focuses on predicting `exam_score` while separating useful explanatory variables from features that create unrealistic performance.
 
 ---
 
-## Final Model Performance (After Fixing Leakage)
+## Methodology
 
-Linear Regression:
+### 1. Leakage Detection
 
-- R²: 0.739  
-- RMSE: 5.96  
+The initial models produced near-perfect performance:
 
-The model explains approximately 74% of the variance in exam scores, which is realistic for behavioral data.
+- Linear Regression R² = 1.0
+- Random Forest R² ≈ 0.9999
+
+This was a strong sign of target leakage rather than genuine predictive power.
+
+Highly correlated variables such as `productivity_score` and `focus_index` appeared to behave like intermediate or derived versions of the target and were removed before final modeling.
+
+### 2. Multicollinearity Check
+
+Variance Inflation Factor (VIF) was used to inspect redundancy among predictors.
+
+- `productivity_score` showed very high VIF and was removed
+- `student_id` was dropped as a non-informative identifier
+
+### 3. Modeling
+
+The final workflow uses an 80/20 train/test split with a fixed random state.
+
+Models compared:
+
+- Linear Regression with `StandardScaler`
+- Random Forest Regressor for nonlinear comparison
+
+The linear model is used mainly for interpretability, while the random forest helps check whether nonlinear structure adds additional predictive value.
 
 ---
 
-## Key Findings
+## Results
 
-Top influential variables (based on standardized coefficients):
+### Final Model Performance After Leakage Removal
 
-| Feature               | Impact            |
-|-----------------------|------------------|
-| mental_health_score   | Strong positive  |
-| study_hours           | Strong positive  |
-| burnout_level         | Strong negative  |
-| social_media_hours    | Moderate negative|
-| sleep_hours           | Mild positive    |
+- Linear Regression
+  - R²: 0.739
+  - RMSE: 5.96
+
+The post-cleaning performance is much more realistic and therefore more trustworthy than the original near-perfect scores.
 
 ### Interpretation
 
-- Better mental health significantly improves exam performance.
-- Increased study hours strongly increase exam scores.
-- Burnout negatively impacts academic performance.
-- Social media usage slightly reduces performance.
-- Sleep has a modest positive effect.
+The final model suggests that exam performance is shaped by a combination of effort, well-being, and sustainable habits rather than any single feature.
+
+The strongest positive signals come from mental health and study hours, while burnout shows a clear negative relationship with exam score. Social media usage also appears negatively related to performance, though its effect is more moderate. Sleep contributes positively, but in this dataset it seems less influential than study behavior and emotional well-being.
+
+---
+
+## Conclusion
+
+The most important outcome of this project is not the exact R² value, but the fact that the model became believable once leakage was removed. That shift matters because it turns the notebook from a misleading high-score exercise into a credible analysis of student performance.
+
+The broader conclusion is that academic outcomes in this dataset appear closely tied to mental health, structured study time, and burnout management. In other words, performance looks less like a pure intelligence or effort problem and more like a balance of discipline, support, and sustainability.
+
+This makes the project useful both as a modeling exercise and as an example of analytical judgment. Detecting unrealistic results, questioning them, and rebuilding the workflow carefully is part of the work, not a side note.
 
 ---
 
 ## Practical Implications
 
-From a policy perspective:
-
-- Investing in student mental health support may significantly improve academic outcomes.
-- Burnout management is critical for sustained performance.
-- Encouraging structured study habits is effective.
-- Reducing digital distractions may provide moderate improvements.
-
----
-
-## Lessons Learned
-
-- Detecting and removing data leakage is critical.
-- High R² can indicate leakage rather than strong modeling.
-- Multicollinearity must be handled before interpreting coefficients.
-- Comparing linear and non-linear models provides deeper insight.
-- Proper train/test separation ensures realistic evaluation.
+- mental health support may improve academic outcomes more than simple short-term performance pressure
+- burnout reduction is likely important for sustained performance
+- structured study habits appear more valuable than just increasing activity without focus
+- reducing digital distraction may offer modest gains when combined with broader support factors
 
 ---
 
@@ -145,8 +122,6 @@ From a policy perspective:
 
 ---
 
-## Interview Explanation
+## Interview Summary
 
-Initially, the model achieved R² = 1.0, which indicated data leakage.  
-After identifying and removing highly correlated intermediate variables, the final model achieved a realistic R² of 0.74.  
-The analysis revealed that mental health, study hours, and burnout are the strongest predictors of exam performance.
+This project started with unrealistically strong model performance, which led to a leakage investigation. After removing target-like features and checking multicollinearity, the final regression model achieved a more realistic R² of 0.739. The cleaned analysis showed that mental health, study hours, and burnout were among the strongest factors associated with exam performance.

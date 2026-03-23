@@ -2,17 +2,9 @@
 
 ## Overview
 
-This project focuses on predicting which Yelp reviews are likely to be helpful and building a simple ranking framework to surface the most useful reviews to users.
+This project looks at a product-facing question: which Yelp reviews are likely to be genuinely helpful, and can a model do enough to rank better reviews closer to the top?
 
-The objective is to combine text-derived signals, reviewer behavior, and business-level context into a practical machine learning workflow that supports review ranking and content prioritization.
-
-This project focuses on:
-
-- NLP-style text feature engineering
-- reviewer and business behavioral feature engineering
-- binary helpfulness prediction
-- ranking reviews using predicted helpfulness probability
-- offline evaluation with classification and ranking metrics
+I like this problem because it sits between NLP and product analytics. The point is not only to classify review helpfulness, but to build a scoring system that feels closer to how a real review platform would decide what deserves visibility.
 
 ---
 
@@ -141,23 +133,13 @@ The final model comparison showed that behavioral and text-derived features can 
 
 - Mean Precision@5: 0.5323
 
-### Key Findings
+## Conclusion
 
-- Gradient Boosting achieved the best overall performance across Accuracy, F1 Score, and ROC AUC.
-- Random Forest also performed strongly, indicating that nonlinear behavioral and text-derived signals were useful.
-- Logistic Regression provided a solid baseline but underperformed the tree-based ensemble models.
-- The ranking output successfully surfaced reviews with high useful-vote counts near the top of the scored list.
-- The NLP analysis showed that review text can be used not only for prediction, but also for qualitative insight into positive and negative restaurant experiences.
+The overall pattern is consistent across both prediction and ranking: review helpfulness is not random, and it can be modeled reasonably well using a mix of text-derived and behavioral features. Gradient Boosting performed best on the classification task, which suggests the relationship between helpfulness and review characteristics is nonlinear and benefits from a more flexible model than plain logistic regression.
 
----
+The ranking results are just as important as the raw classification scores. In practice, a review platform does not simply need to label reviews as helpful or not. It needs to surface better reviews near the top. The model's top-ranked outputs tended to contain reviews that were actually useful, which makes the project feel much closer to a real product decision problem than a standard classroom classification exercise.
 
-## Expected Outputs
-
-- helpful vs non-helpful review distribution
-- review length and usefulness relationship
-- model comparison table
-- feature importance analysis
-- top-ranked review inspection
+What I like most about this project is that the features remain interpretable. Review length, reviewer history, business context, and writing style all contribute signal, which means the model is not just performing well numerically. It is also capturing patterns that make intuitive sense for a review platform trying to prioritize quality content.
 
 ---
 
@@ -181,17 +163,3 @@ This project can support:
 - matplotlib
 - seaborn
 - Jupyter Notebook
-
----
-
-## Summary
-
-This project extends my portfolio into NLP-adjacent ranking and content quality prediction using a large-scale review platform dataset.
-
-It demonstrates:
-
-- practical feature engineering from raw review text
-- combining behavioral and content signals
-- binary classification for product-style decision making
-- ranking-oriented evaluation for real-world usefulness
-- restaurant review analysis with positive and negative review examples

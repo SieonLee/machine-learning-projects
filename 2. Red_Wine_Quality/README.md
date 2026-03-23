@@ -1,11 +1,12 @@
 # Red Wine Quality Classification
 
-A machine learning project that predicts whether a red wine is high quality based on its physicochemical properties.  
-This project emphasizes structured experimentation, generalization performance, and model interpretability rather than accuracy alone.
+This project predicts whether a red wine should be treated as high quality using its physicochemical properties.
+
+It is a relatively compact classification problem, but a useful one for showing how I usually work: define a practical target, evaluate more than one model, and pay attention to where the model is confident versus where the classes are genuinely hard to separate.
 
 ---
 
-## Project Overview
+## Overview
 
 This project uses the UCI Red Wine Quality dataset to build a binary classification model that predicts high-quality wines.
 
@@ -54,7 +55,7 @@ Special attention was given to F1-score and PR-AUC due to class imbalance.
 
 ---
 
-## Modeling Approach
+## Methodology
 
 ### 1. Data Preprocessing
 
@@ -103,6 +104,16 @@ Top influential features:
 
 ---
 
+## Results
+
+The modeling workflow showed that wine quality can be predicted reasonably well from physicochemical measurements, especially once the class imbalance is handled carefully and the baseline is compared against a stronger ensemble model.
+
+Alcohol, sulphates, and volatile acidity consistently appeared as the most influential variables. The random forest also helped capture interactions that a simple linear decision boundary would miss, which is why it served as a stronger final model for this problem.
+
+## Conclusion
+
+This project works well as a compact classification case study because it combines preprocessing, imbalance-aware evaluation, model comparison, and interpretation in a clean notebook workflow. The main conclusion is that wine quality is meaningfully predictable, but not perfectly separable. That ambiguity is part of what makes the dataset useful: the signal is real, yet still complex enough to reward careful modeling rather than a single simple rule.
+
 ## Tech Stack
 
 - Python
@@ -111,4 +122,3 @@ Top influential features:
 - scikit-learn
 - matplotlib
 - seaborn
-
